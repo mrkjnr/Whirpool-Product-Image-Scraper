@@ -1,13 +1,5 @@
 # Whirpool-Product-Image-Scraper
 A Python-based web scraping system that automates image extraction of Whirlpool product parts using data from a CSV or Google Sheet.
-=======
-Whirlpool Part Image Scraper Web Tool
-
-
-Description:
-------------
-This is a local web tool for scraping Whirlpool product or diagram images using part numbers from a CSV file.
-It helps automate the image collection for Whirlpool parts listings from official or verified sources.
 
 How to Use:
 -----------
