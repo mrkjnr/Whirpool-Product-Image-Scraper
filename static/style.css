@@ -1,0 +1,71 @@
+/* Apply basic styling to the entire page */
+body {
+  font-family: Arial, sans-serif;               /* Use a clean, readable font */
+  background: #f0f0f0;                          /* Light gray background */
+  margin: 0;                                    /* Remove default margin */
+  padding: 40px;                                /* Add spacing around content */
+  display: flex;                                /* Use flex layout to center container */
+  justify-content: center;                      /* Center horizontally */
+  align-items: flex-start;                      /* Align content to the top */
+}
+
+/* Style the main container box */
+.container {
+  background: #fff;                             /* White background */
+  padding: 30px 40px;                           /* Inner spacing */
+  border-radius: 12px;                          /* Rounded corners */
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);          /* Light shadow for depth */
+  max-width: 900px;                             /* Maximum width of the container */
+  width: 100%;                                  /* Full width on small screens */
+}
+
+/* Center and space out the headings */
+h1, h2 {
+  margin-bottom: 20px;                          /* Space below the headings */
+  text-align: center;                           /* Center-align text */
+}
+
+/* Style the form section */
+form {
+  text-align: center;                           /* Center the form content */
+  margin-bottom: 20px;                          /* Space below the form */
+}
+
+/* Style all buttons */
+button {
+  background-color: #0078D6;                    /* Primary blue color */
+  color: white;                                 /* White text */
+  padding: 12px 25px;                           /* Button padding */
+  border: none;                                 /* Remove default border */
+  border-radius: 8px;                           /* Rounded corners */
+  font-size: 16px;                              /* Font size */
+  cursor: pointer;                              /* Pointer cursor on hover */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #005a9e;                    /* Darker blue on hover */
+}
+
+/* Layout for the image gallery */
+.gallery {
+  display: grid;                                /* Use grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive column sizing */
+  gap: 20px;                                    /* Space between images */
+}
+
+/* Style each image container box */
+.image-box {
+  text-align: center;                           /* Center the content inside */
+  background: #fafafa;                          /* Light background */
+  padding: 10px;                                /* Inner spacing */
+  border-radius: 8px;                           /* Rounded corners */
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);          /* Light shadow */
+}
+
+/* Style the image inside the image box */
+.image-box img {
+  width: 100%;                                  /* Make image fill the box */
+  height: auto;                                 /* Keep aspect ratio */
+  border-radius: 4px;                           /* Slightly rounded corners */
+}

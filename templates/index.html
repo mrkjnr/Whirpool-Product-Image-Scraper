@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Whirlpool Image Scraper</title>
+  <!-- Loads the CSS file from the 'static' directory -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Whirlpool CSV Image Scraper</h1>
+
+    <!-- Form to upload the CSV file -->
+    <form action="{{ url_for('upload_csv') }}" method="post" enctype="multipart/form-data">
+      <!-- Instructions for the user -->
+      <label>Select CSV File (with "Title" and "PRODUCT URL" columns):</label><br><br>
+      <!-- File input, only allows CSV files -->
+      <input type="file" name="file" accept=".csv" required>
+      <!-- Submit button to upload and trigger the scraping process -->
+      <button type="submit">Upload & Scrape</button>
+    </form>
+
+    <!-- If images have been scraped, show download button -->
+    {% if images %}
+      <div style="text-align:center; margin-top: 20px;">
+        <!-- Link to download all images as a ZIP file -->
+        <a href="{{ url_for('download_images') }}">
+          <button style="background-color: green;">Download All Images (ZIP)</button>
+        </a>
+      </div>
+    {% endif %}
+
+    <hr>
+
+    <h2>Downloaded Images</h2>
+    <div class="gallery">
+      <!-- Loop through the list of images and display each one -->
+      {% for image in images %}
+        <div class="image-box">
+          <!-- Display the image using the filename -->
+          <img src="{{ url_for('static', filename='whirlpool_images/' + image) }}" alt="{{ image }}">
+          <!-- Show the image filename below the image -->
+          <p>{{ image }}</p>
+        </div>
+      {% else %}
+        <!-- If there are no images, show this message -->
+        <p>No images yet. Upload a CSV to start scraping.</p>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
